@@ -1,0 +1,264 @@
+:root {
+    --bg-color: #ffffff;
+    --text-main: #1a1a1a;
+    --text-sub: #666666;
+    --accent: #007AFF;
+    --card-bg: #fdfdfd;
+    --loader-bg: #000000;
+    --loader-text: #ffffff;
+    --transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#welcome-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--loader-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+.signature-svg {
+    width: 350px;
+    height: 120px;
+}
+
+.signature-svg text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    font-weight: 600;
+    fill: transparent;
+    stroke: var(--loader-text);
+    stroke-width: 1.2px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawOutline 2.5s cubic-bezier(0.2, 0.6, 0.2, 1) forwards, fillColor 0.8s ease forwards;
+    animation-delay: 0.3s, 2.3s;
+}
+
+@keyframes drawOutline {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fillColor {
+    to {
+        fill: var(--loader-text);
+        stroke: transparent;
+    }
+}
+
+nav {
+    position: fixed;
+    top: 40px;
+    right: 50px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lang-switcher {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.lang-switcher:hover .lang-dropdown {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-sub);
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 40px 60px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.container.visible {
+    opacity: 1;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.profile-side {
+    text-align: center;
+    position: sticky;
+    top: 120px;
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 1px solid #eaeaea;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    color: var(--text-sub);
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.contact-info {
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 1.8;
+}
+
+.contact-info b {
+    color: var(--text-main);
+    display: block;
+    margin-top: 15px;
+}
+
+.card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content-card {
+    background: var(--card-bg);
+    padding: 45px;
+    border-radius: 16px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+}
+
+.content-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.section-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-side {
+        position: static;
+        margin-bottom: 40px;
+    }
+
+    nav {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        width: 100%;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .container {
+        padding-top: 20px;
+    }
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

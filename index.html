@@ -1,77 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/259d7b3f12.js" crossorigin="anonymous"></script>
+    <title>Hongxiang Yang | Social VR</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&family=Dancing+Script:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
-    <div id="header-placeholder"></div>
-
-    <main class="home-container">
-        <div class="sidebar"></div>
-        
-        <div class="left-column">
-            <div class="profile-photo">
-                <img src="images/photo.jpg" alt="Your Photo">
+    <div id="welcome-loader">
+        <svg class="signature-svg" viewBox="0 0 350 120">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Hongxiang</text>
+        </svg>
+    </div>
+    <nav>
+        <div class="lang-switcher" id="current-lang" title="Switch Language">
+            🇬🇧
+            <div class="lang-dropdown">
+                <span class="lang-item" title="English">🇬🇧</span>
+                <span class="lang-item" title="Chinese">🇨🇳</span>
             </div>
-
-            <div class="profile-info">
-                <h2>Hongxiang Yang</h2>
-            </div>
-
-            <div class="schools">
-                <p>PhD. Social VR and HCI</p> 
-                <p>University of Glasgow, UK</p>
-            </div>
-
-            <ul class="contact-info">
-                <li>
-                    <a href="https://www.linkedin.com">
-                        <i class="fa-brands fa-linkedin fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com">
-                        <i class="fa-brands fa-instagram fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:Termina1@outlook.com">
-                        <i class="fa-regular fa-envelope fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel">
-                        <i class="fa-brands fa-youtube fa-2x"></i>
-                    </a>
-                </li>
-            </ul>
         </div>
-
-        <div class="right-column">
-            <div class="sub-intro">
-                <p>Welcome to my Meta-Reality</p>
+        <ul>
+            <li><a href="#" onclick="showSection('home')" class="nav-link active" id="link-home">Home</a></li>
+            <li><a href="#" onclick="showSection('education')" class="nav-link" id="link-education">Education</a></li>
+            <li><a href="#" onclick="showSection('project')" class="nav-link" id="link-project">Project</a></li>
+            <li><a href="#" onclick="showSection('cv')" class="nav-link" id="link-cv">CV</a></li>
+        </ul>
+    </nav>
+    <div class="container" id="main-content">
+        <section id="home" class="active">
+            <div class="home-grid">
+                <div class="profile-side">
+                    <img src="https://via.placeholder.com/400" alt="Hongxiang Yang" class="profile-img">
+                    <div class="social-icons">
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="contact-info">
+                        <b>Email:</b>
+                        <a href="mailto:H.yang.5@research.gla.ac.uk">H.yang.5@research.gla.ac.uk</a>
+                        <b>Current Role:</b>
+                        <span>PhD in Social Virtual Reality</span>
+                        <b>Affiliation:</b>
+                        <a href="https://www.gla.ac.uk/schools/computing/" target="_blank">University of
+                            Glasgow,<br>School of Computing Science</a>
+                    </div>
+                </div>
+                <div class="card-stack">
+                    <div class="content-card">
+                        <h2>Hiya!</h2>
+                        <p>I am a PhD student in the School of Computing Science at the <strong>University of
+                                Glasgow</strong>. My research focuses on <strong>Social Virtual Reality (Social
+                                VR)</strong>.</p>
+                        <p>Currently, I am exploring how people interact, communicate, and build relationships within
+                            immersive environments.</p>
+                    </div>
+                    <div class="content-card">
+                        <span class="section-tag">Papers & Experience</span>
+                        <p style="color: #999; font-style: italic;">Updating my publication list and research journey
+                            soon...</p>
+                    </div>
+                    <div class="content-card">
+                        <span class="section-tag">Interests & Thoughts</span>
+                        <p style="color: #999; font-style: italic;">Books, VR gadgets, and reflections on digital social
+                            spaces...</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="introduction">
-                <p>“I’m a boy from a coastal city in China. During my college years, I majored in <span class="highlight">media studies</span>. Later, I crossed oceans to pursue my master’s degree in London. Throughout this journey, I delved deep into <span class="highlight">digital creative media</span>, particularly in virtual social interactions.”</p>
-                        
-                <p>“After three years of work experience, I reevaluated my passions and focused on researching <span class="highlight">Social VR</span>, aiming to enhance people’s engagement in future virtual social experiences. I believe in empowering individuals to cultivate unique identities and foster more meaningful social interactions in virtual worlds.”</p>
-            </div>
-
-            <div class="bubble bubble-2"></div>
-            <div class="bubble bubble-3"></div>
-        </div>
-    </main>
-
-    <div id="footer-placeholder"></div>
-    
-    <script src="scripts.js"></script>
-    
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Ph.D. at University of Glasgow...</p>
+        </section>
+        <section id="project">
+            <h2>Selected Projects</h2>
+            <p>Prototype development and user studies...</p>
+        </section>
+        <section id="cv">
+            <h2>Curriculum Vitae</h2>
+            <p>Link to PDF file...</p>
+        </section>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
