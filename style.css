@@ -148,6 +148,23 @@ nav a.active {
     top: 120px;
 }
 
+.profile-name {
+    font-family: 'Inter', sans-serif;
+    /* 和正文一样的字体 */
+    font-size: 1.5rem;
+    /* 比大标题 2.2rem 小一点 */
+    font-weight: 700;
+    /* 加粗 */
+    color: #000000;
+    /* 黑色 */
+    text-align: left;
+    /* 左对齐 */
+    margin-bottom: 15px;
+    /* 和照片保持一点距离 */
+    padding-left: 10px;
+    /* 稍微往右挪一点，对齐感更好 */
+}
+
 .profile-img {
     width: 220px;
     height: 220px;
@@ -177,16 +194,31 @@ nav a.active {
 
 .contact-info {
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-sub);
     line-height: 1.8;
 }
 
+.contact-info a {
+    color: #3F83F8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+    color: #3F83F8;
+    text-decoration: underline;
+}
+
 .contact-info b {
-    color: var(--text-main);
+    color: #1a1a1a;
     display: block;
     margin-top: 15px;
+    font-weight: 600;
+    font-size: 15px;
 }
+
+
 
 .card-stack {
     display: flex;
