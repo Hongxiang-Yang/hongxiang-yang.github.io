@@ -1,9 +1,10 @@
 :root {
     --bg-color: #ffffff;
-    --text-main: #1a1a1a;
-    --text-sub: #666666;
+    --text-main: #4b5563;
+    /* gray-600 */
+    --text-sub: #9ca3af;
+    /* gray-400 */
     --accent: #3F83F8;
-    /* 你的专属蓝色 */
     --card-bg: #fdfdfd;
     --loader-bg: #000000;
     --loader-text: #ffffff;
@@ -17,28 +18,16 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
     overflow-x: hidden;
-
-    /* 🌟 新增：动态点格背景的核心代码 --- */
     background-color: #ffffff;
-    /* 基底纯白 */
-
-    /* 1. 生成点格纹理 (radial-gradient) */
-    /* 颜色选用 10% 透明度的淡蓝色 rgba(63, 131, 248, 0.5) */
     background-image: radial-gradient(rgba(63, 131, 248, 0.5) 1.5px, transparent 1.5px);
-
-    /* 2. 设置点之间的间距 (网格大小) */
     background-size: 100px 100px;
-
-    /* 3. 应用向上平移动画 */
-    /* speed-panning 动画名，30s 匀速，linear 线性，infinite 无限循环 */
-    animation: speed-panning 30s linear infinite;
+    animation: speed-panning 40s linear infinite;
+    color: var(--text-main);
 }
 
-/* 🌟 4. 定义背景平移动画 (关键帧) --- */
-/* 为了实现匀速、完美的无限循环，我们需要在 to 状态下移动网格大小的倍数 */
 @keyframes speed-panning {
     from {
         background-position: 0 0;
@@ -46,12 +35,17 @@ body {
 
     to {
         background-position: 0 -500px;
-        /* 匀速垂直往上移动 500px（10倍网格大小） */
     }
 }
 
-/* --- 下面保持之前的代码不变 --- */
+/* 全局加粗控制 */
+strong,
+b {
+    color: #374151;
+    font-weight: 600;
+}
 
+/* 开场动画 */
 #welcome-loader {
     position: fixed;
     top: 0;
@@ -74,7 +68,6 @@ body {
 .signature-svg text {
     font-family: 'Dancing Script', cursive;
     font-size: 5rem;
-    font-weight: 600;
     fill: transparent;
     stroke: var(--loader-text);
     stroke-width: 1.2px;
@@ -139,26 +132,22 @@ nav ul {
     display: flex;
     list-style: none;
     gap: 25px;
-    align-items: center;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--text-sub);
+    color: var(--text-main);
     font-size: 15px;
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: var(--accent);
-}
-
+nav a:hover,
 nav a.active {
     color: var(--accent);
     font-weight: 600;
 }
 
-/* 主容器 */
+/* 容器布局 */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -186,10 +175,9 @@ nav a.active {
 }
 
 .profile-name {
-    font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #000000;
+    color: #374151;
     margin-bottom: 15px;
     padding-left: 5px;
 }
@@ -205,14 +193,13 @@ nav a.active {
 
 .social-icons {
     display: flex;
-    justify-content: flex-start;
     gap: 22px;
     margin-bottom: 25px;
     padding-left: 5px;
 }
 
 .social-icons a {
-    color: var(--text-sub);
+    color: var(--text-main);
     font-size: 22px;
     transition: 0.3s;
 }
@@ -223,27 +210,22 @@ nav a.active {
 }
 
 .contact-info {
-    font-size: 16px;
-    color: var(--text-sub);
-    line-height: 1.8;
+    font-size: 15px;
+}
+
+.contact-info b {
+    display: block;
+    margin-top: 15px;
+    color: #4b5563;
 }
 
 .contact-info a {
     color: var(--accent);
     text-decoration: none;
-    transition: color 0.2s ease;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
-}
-
-.contact-info b {
-    color: #1a1a1a;
-    display: block;
-    margin-top: 15px;
-    font-weight: 600;
-    font-size: 15px;
 }
 
 /* 右侧卡片 */
@@ -254,53 +236,101 @@ nav a.active {
 }
 
 .content-card {
-    background: rgba(253, 253, 253, 0.9);
-    /* ✨ 稍微增加卡片的透明度，让背景可以透过来 */
-    backdrop-filter: blur(5px);
-    /* ✨ 卡片下方的模糊效果，让背景更柔和 */
+    background: rgba(253, 253, 253, 0.85);
+    backdrop-filter: blur(10px);
     padding: 45px;
-    border-radius: 16px;
+    border-radius: 20px;
     border: 1px solid #f2f2f2;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.03);
 }
 
 .content-card h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
+    font-weight: 700;
+    color: #374151;
     margin-bottom: 20px;
 }
 
-.section-tag {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 10px;
-    display: block;
+.content-card p {
+    margin-bottom: 15px;
 }
 
-/* 手机端适配 */
+.content-card a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.content-card a:hover {
+    text-decoration: underline;
+}
+
+/* --- 🌟 更新：卡片内的小标题样式 --- */
+.news-title {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.sub-heading {
+    display: block;
+    font-size: 0.95rem;
+    /* 缩小到和参考文献一样大 */
+    font-weight: 700;
+    /* 加粗 */
+    color: #374151;
+    /* 保持蓝色 */
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* --- 🌟 更新：列表与参考文献样式优化 --- */
+.pub-item {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.experience-list,
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+.experience-list li,
+.skills-list li {
+    position: relative;
+    padding-left: 16px;
+    /* 给黑点留出位置 */
+    margin-bottom: 4px;
+    /* 缩小行距，变得更紧凑正常 */
+    font-size: 0.95rem;
+    /* 字号和参考文献保持一致 */
+    line-height: 1.6;
+}
+
+/* 统一修改圆点颜色为黑色（深灰），并同时应用到两个列表 */
+.experience-list li::before,
+.skills-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text-main);
+    /* 变成了和正文一样的深色 */
+    font-weight: bold;
+}
+
+/* 手机适配 */
 @media (max-width: 900px) {
     nav {
         position: relative;
         top: 0;
-        left: 0;
-        padding: 20px 10px;
+        padding: 20px;
         flex-direction: row;
-        flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
-        justify-content: center;
-    }
-
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .lang-switcher {
-        text-align: center;
-        margin-bottom: 0;
     }
 
     .home-grid {
@@ -308,23 +338,21 @@ nav a.active {
     }
 
     .profile-side {
+        text-align: center;
         position: static;
-        text-align: center;
         margin-bottom: 40px;
-    }
-
-    .profile-name {
-        text-align: center;
-        padding-left: 0;
     }
 
     .social-icons {
         justify-content: center;
-        padding-left: 0;
     }
 
     .container {
         padding-top: 20px;
+    }
+
+    .content-card {
+        padding: 30px;
     }
 }
 
