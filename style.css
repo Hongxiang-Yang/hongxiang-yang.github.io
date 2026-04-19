@@ -26,11 +26,11 @@ body {
     /* 基底纯白 */
 
     /* 1. 生成点格纹理 (radial-gradient) */
-    /* 颜色选用 10% 透明度的淡蓝色 rgba(63, 131, 248, 0.1) */
-    background-image: radial-gradient(rgba(63, 131, 248, 0.1) 1.5px, transparent 1.5px);
+    /* 颜色选用 10% 透明度的淡蓝色 rgba(63, 131, 248, 0.5) */
+    background-image: radial-gradient(rgba(63, 131, 248, 0.5) 1.5px, transparent 1.5px);
 
     /* 2. 设置点之间的间距 (网格大小) */
-    background-size: 50px 50px;
+    background-size: 100px 100px;
 
     /* 3. 应用向上平移动画 */
     /* speed-panning 动画名，30s 匀速，linear 线性，infinite 无限循环 */
