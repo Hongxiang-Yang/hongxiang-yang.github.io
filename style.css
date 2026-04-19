@@ -150,19 +150,12 @@ nav a.active {
 
 .profile-name {
     font-family: 'Inter', sans-serif;
-    /* 和正文一样的字体 */
     font-size: 1.5rem;
-    /* 比大标题 2.2rem 小一点 */
     font-weight: 700;
-    /* 加粗 */
     color: #000000;
-    /* 黑色 */
     text-align: left;
-    /* 左对齐 */
     margin-bottom: 15px;
-    /* 和照片保持一点距离 */
     padding-left: 10px;
-    /* 稍微往右挪一点，对齐感更好 */
 }
 
 .profile-img {
