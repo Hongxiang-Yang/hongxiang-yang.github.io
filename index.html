@@ -22,25 +22,37 @@
 
     <nav>
         <div class="lang-switcher" id="current-lang" title="Switch Language">
-            🇬🇧
+            <i class="fas fa-globe"></i> <span id="lang-display">EN</span>
             <div class="lang-dropdown">
-                <span class="lang-item" title="English">🇬🇧</span>
-                <span class="lang-item" title="Chinese">🇨🇳</span>
+                <span class="lang-item" onclick="switchLang('en')">English</span>
+                <span class="lang-item" onclick="switchLang('zh')">简体中文</span>
             </div>
         </div>
         <ul>
-            <li><a href="#" onclick="showSection('home')" class="nav-link active" id="link-home">Home</a></li>
-            <li><a href="#" onclick="showSection('education')" class="nav-link" id="link-education">Education</a></li>
-            <li><a href="#" onclick="showSection('project')" class="nav-link" id="link-project">Project</a></li>
-            <li><a href="#" onclick="showSection('cv')" class="nav-link" id="link-cv">CV</a></li>
+            <li><a href="#" onclick="showSection('home')" class="nav-link active" id="link-home">
+                    <span lang="en">Home</span><span lang="zh">首页</span>
+                </a></li>
+            <li><a href="#" onclick="showSection('education')" class="nav-link" id="link-education">
+                    <span lang="en">Education</span><span lang="zh">教育背景</span>
+                </a></li>
+            <li><a href="#" onclick="showSection('project')" class="nav-link" id="link-project">
+                    <span lang="en">Project Gallery</span><span lang="zh">项目画廊</span>
+                </a></li>
+            <li><a href="#" onclick="showSection('cv')" class="nav-link" id="link-cv">
+                    <span lang="en">CV</span><span lang="zh">简历</span>
+                </a></li>
         </ul>
     </nav>
 
     <div class="container" id="main-content">
         <section id="home" class="active">
             <div class="home-grid">
+
                 <div class="profile-side">
-                    <div class="profile-name">Hongxiang Yang</div>
+                    <div class="profile-name">
+                        <span lang="en">Hongxiang Yang</span>
+                        <span lang="zh">杨泓祥</span>
+                    </div>
                     <img src="images/profile.jpg" alt="Hongxiang Yang" class="profile-img">
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/hongxiang-yang-810708332/" target="_blank"
@@ -53,45 +65,81 @@
                     <div class="contact-info">
                         <b>Email:</b>
                         <a href="mailto:H.yang.5@research.gla.ac.uk">H.yang.5@research.gla.ac.uk</a>
-                        <b>Current Role:</b>
-                        <a href="https://www.gla.ac.uk/pgrs/hongxiangyang/" target="_blank"
-                            rel="noopener noreferrer">PhD in Social Virtual Reality</a>
-                        <b>Affiliation:</b>
-                        <a href="https://www.gla.ac.uk/schools/computing/" target="_blank"
-                            rel="noopener noreferrer">University of Glasgow,<br>School of Computing Science</a>
+
+                        <b>
+                            <span lang="en">Current Role:</span>
+                            <span lang="zh">目前在读:</span>
+                        </b>
+                        <a href="https://www.gla.ac.uk/pgrs/hongxiangyang/" target="_blank" rel="noopener noreferrer">
+                            <span lang="en">PhD in Social Virtual Reality</span>
+                            <span lang="zh">社交虚拟现实 博士生</span>
+                        </a>
+
+                        <b>
+                            <span lang="en">Affiliation:</span>
+                            <span lang="zh">所属机构:</span>
+                        </b>
+                        <a href="https://www.gla.ac.uk/schools/computing/" target="_blank" rel="noopener noreferrer">
+                            <span lang="en">University of Glasgow,<br>School of Computing Science</span>
+                            <span lang="zh">格拉斯哥大学<br>计算机科学学院</span>
+                        </a>
                     </div>
                 </div>
 
                 <div class="card-stack">
+
                     <div class="content-card">
-                        <h2>Hiya!</h2>
-                        <p>I am a second-year PhD researcher from <a href="https://sirius.glasgow.ac.uk/team/"
-                                target="_blank" rel="noopener noreferrer">The SIRIUS Lab</a>, <a
-                                href="https://www.gla.ac.uk/schools/computing/research/researchsections/gist-section/"
-                                target="_blank" rel="noopener noreferrer">GIST</a>,
-                            supervised by Prof. <a href="https://www.mkhamis.com/" target="_blank"
-                                rel="noopener noreferrer">Mohamed Khamis</a> and Dr. <a href="https://ilyena.com/"
-                                target="_blank" rel="noopener noreferrer">Ilyena Hirskyj-Douglas</a>.</p>
-                        <p>My research focuses on understanding how users express, perceive, and manage
-                            <strong>identity</strong> through
-                            embodied avatar customisation in <strong>Social Virtual Reality </strong> (Social VR).
-                            Methodologically, I
-                            lean on mixed-method approaches, blending qualitative and quantitative data.
-                        </p>
-                        <p>I am also interested in how social interaction in such XR media contributes to <strong>
-                                reconstruction of users’ identity</strong>, especially in the context of emerging social
-                            norms, so as
-                            to inform the design guidelines for XR systems that better support inclusive identity
-                            exploration and negotiation.</p>
-                        <p><strong>Always looking to connect for research collaborations or internship roles in XR,
-                                avatar, and digital identity!</strong></p>
+                        <h2 lang="en">Hiya!</h2>
+                        <h2 lang="zh">欢迎！</h2>
+
+                        <div lang="en">
+                            <p>I am a second-year PhD researcher from <a href="https://sirius.glasgow.ac.uk/team/"
+                                    target="_blank" rel="noopener noreferrer">The SIRIUS Lab</a>, <a
+                                    href="https://www.gla.ac.uk/schools/computing/research/researchsections/gist-section/"
+                                    target="_blank" rel="noopener noreferrer">GIST</a>, supervised by Prof. <a
+                                    href="https://www.mkhamis.com/" target="_blank" rel="noopener noreferrer">Mohamed
+                                    Khamis</a> and Dr. <a href="https://ilyena.com/" target="_blank"
+                                    rel="noopener noreferrer">Ilyena Hirskyj-Douglas</a>.</p>
+                            <p>My research focuses on understanding how users express, perceive, and manage
+                                <strong>identity</strong> through embodied avatar customisation in <strong>Social
+                                    Virtual Reality </strong> (Social VR). Methodologically, I lean on mixed-method
+                                approaches, blending qualitative and quantitative data.
+                            </p>
+                            <p>I am also interested in how social interaction in such XR media contributes to
+                                <strong>reconstruction of users’ identity</strong>, especially in the context of
+                                emerging social norms, so as to inform the design guidelines for XR systems that better
+                                support inclusive identity exploration and negotiation.
+                            </p>
+                            <p><strong>Always looking to connect for research collaborations or internship roles in XR,
+                                    avatar, and digital identity!</strong></p>
+                        </div>
+
+                        <div lang="zh">
+                            <p>我是来自格拉斯哥大学 <a href="https://sirius.glasgow.ac.uk/team/" target="_blank"
+                                    rel="noopener noreferrer">The SIRIUS Lab</a> 和 <a
+                                    href="https://www.gla.ac.uk/schools/computing/research/researchsections/gist-section/"
+                                    target="_blank" rel="noopener noreferrer">GIST</a> 的二年级博士生，导师为 <a
+                                    href="https://www.mkhamis.com/" target="_blank" rel="noopener noreferrer">Mohamed
+                                    Khamis</a> 教授与 <a href="https://ilyena.com/" target="_blank"
+                                    rel="noopener noreferrer">Ilyena Hirskyj-Douglas</a> 博士。</p>
+                            <p>我的研究重点是理解用户如何在<strong>社交虚拟现实</strong> (Social VR)
+                                中，通过具身化身的个性化定制来表达、感知和管理他们的<strong>数字身份</strong>的。我擅长使用于使用混合研究方法，结合定性和定量数据。</p>
+                            <p>我也对XR媒介中的社交互动如何促进<strong>用户身份的重构</strong>（特别是在这些媒体中新兴社会规范背景下）很感兴趣，并希望借此为混合现实系统提供设计指南，从而更好地支持人们包容性的身份探索与协商。
+                            </p>
+                            <p><strong>欢迎对混合现实、虚拟化身以及数字身份建构感兴趣的老师们和我联系！</strong></p>
+                        </div>
                     </div>
 
                     <div class="content-card">
-                        <span class="news-title">What's new!</span>
-                        <p>So excited that my first year's work was recognised by CHI '26!</p>
+                        <span class="news-title" lang="en">What's new!</span>
+                        <span class="news-title" lang="zh">最新消息！</span>
 
-                        <span class="sub-heading">Conference Proceedings</span>
+                        <p lang="en">So excited that my first year's work was recognised by CHI '26!</p>
+                        <p lang="zh">很激动我第一年的工作就得到了人机交互领域的顶会 CHI '26 的认可！</p>
+
+                        <span class="sub-heading" lang="en">Conference Proceedings</span>
+                        <span class="sub-heading" lang="zh">会议论文</span>
+
                         <div class="pub-item">
                             [1] <strong>Hongxiang Yang</strong>, Shaun Macdonald, Mohamed Khamis, and Ilyena
                             Hirskyj-Douglas (2026). Wearing Many Avatars: How Users Express, Shift and Perceive Identity
@@ -101,24 +149,53 @@
                                 rel="noopener noreferrer">10.1145/3772318.3790447</a>.
                         </div>
 
-                        <span class="sub-heading">Experience</span>
+                        <span class="sub-heading" lang="en">Experience</span>
+                        <span class="sub-heading" lang="zh">其它经历</span>
+
                         <ul class="experience-list">
-                            <li>Student Volunteer, CHI '26 Barcelona</li>
-                            <li>Reviewer, CHI '26 Poster Track</li>
-                            <li>Reviewer, MUM '25 Poster Track</li>
+                            <li>
+                                <span lang="en">Student Volunteer, CHI '26 Barcelona</span>
+                                <span lang="zh">学生志愿者, CHI '26 巴塞罗那</span>
+                            </li>
+                            <li>
+                                <span lang="en">Reviewer, CHI '26 Poster Track</span>
+                                <span lang="zh">审稿人, CHI '26 海报轨道</span>
+                            </li>
+                            <li>
+                                <span lang="en">Reviewer, MUM '25 Poster Track</span>
+                                <span lang="zh">审稿人, MUM '25 海报轨道</span>
+                            </li>
                         </ul>
                     </div>
 
                     <div class="content-card">
-                        <span class="news-title">Other Skills & Interests</span>
+                        <span class="news-title" lang="en">Other Skills & Interests</span>
+                        <span class="news-title" lang="zh">技能与兴趣</span>
+
                         <ul class="skills-list">
-                            <li>📸 Photographer & Vlogger, a passion since my undergraduate days.</li>
-                            <li>🎨 Designer, I find great satisfaction in the aesthetics of posters and web design!</li>
-                            <li>🎮 E-sports lover, League of Legends player (13 years!), and Diamond rank in Valorant &
-                                TFT.</li>
-                            <li>🏀 Basketball enthusiast, but haven't played in a while. It's been my hobby since
-                                primary school.</li>
-                            <li>🎯 Darts player, took 1st place when I first tried it!</li>
+                            <li>
+                                <span lang="en">📸 Photographer & Vlogger, a passion since my undergraduate days.</span>
+                                <span lang="zh">📸 摄影师，短视频博主，从本科到现在一直有的兴趣</span>
+                            </li>
+                            <li>
+                                <span lang="en">🎨 Designer, I find great satisfaction in the aesthetics of posters and
+                                    web design!</span>
+                                <span lang="zh">🎨 设计师，制作海报以及网页让我感到满足！</span>
+                            </li>
+                            <li>
+                                <span lang="en">🎮 E-sports lover, League of Legends player (13 years!), and Diamond
+                                    rank in Valorant & TFT.</span>
+                                <span lang="zh">🎮 电竞爱好者，英雄联盟（13年玩家），瓦洛兰特和tft钻石选手</span>
+                            </li>
+                            <li>
+                                <span lang="en">🏀 Basketball enthusiast, but haven't played in a while. It's been my
+                                    hobby since primary school.</span>
+                                <span lang="zh">🏀 篮球爱好者，很久没打了，但是从小学开始一直梦想着打NBA！</span>
+                            </li>
+                            <li>
+                                <span lang="en">🎯 Darts player, took 1st place when I first tried it!</span>
+                                <span lang="zh">🎯 飞镖天选之人，第一次玩飞镖就拿了第一！</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -126,16 +203,81 @@
         </section>
 
         <section id="education">
-            <h2>Education</h2>
-            <p>Content coming soon...</p>
+            <div class="card-stack">
+                <div class="content-card">
+
+                    <h2 lang="en">Education</h2>
+                    <h2 lang="zh">教育背景</h2>
+
+                    <p lang="en" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 35px;">
+                        I come from an interdisciplinary background in computer science, communication, and media
+                        studies, which informs my research in HCI and Social VR.
+                    </p>
+                    <p lang="zh" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 35px;">
+                        我拥有计算机科学、传播学和媒体创意的跨学科背景，这为我在人机交互与社交虚拟现实领域的研究奠定了基础。
+                    </p>
+
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">
+                                <span lang="en">2024.10 - Present</span>
+                                <span lang="zh">2024.10 - 至今</span>
+                            </div>
+                            <h3 class="timeline-degree">
+                                <span lang="en">PhD Researcher, HCI & Social VR</span>
+                                <span lang="zh">博士研究员，人机交互与虚拟现实</span>
+                            </h3>
+                            <div class="timeline-uni">
+                                <span lang="en">University of Glasgow</span>
+                                <span lang="zh">格拉斯哥大学</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2020 - 2021</div>
+                            <h3 class="timeline-degree">
+                                <span lang="en">Master of Science, Digital Creative Media</span>
+                                <span lang="zh">理学硕士，数字创意媒体</span>
+                            </h3>
+                            <div class="timeline-uni">
+                                <span lang="en">Loughborough University</span>
+                                <span lang="zh">拉夫堡大学</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2016 - 2020</div>
+                            <h3 class="timeline-degree">
+                                <span lang="en">Bachelor of Arts, Network and New Media</span>
+                                <span lang="zh">文学学士，网络与新媒体</span>
+                            </h3>
+                            <div class="timeline-uni">
+                                <span lang="en">Communication University of Zhejiang</span>
+                                <span lang="zh">浙江传媒学院</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </section>
+
         <section id="project">
-            <h2>Projects</h2>
-            <p>Content coming soon...</p>
+            <h2 lang="en">Project Gallery</h2>
+            <h2 lang="zh">项目画廊</h2>
+            <p lang="en">Content coming soon...</p>
+            <p lang="zh">内容建设中...</p>
         </section>
+
         <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <p>Content coming soon...</p>
+            <h2 lang="en">Curriculum Vitae</h2>
+            <h2 lang="zh">简历</h2>
+            <p lang="en">Content coming soon...</p>
+            <p lang="zh">内容建设中...</p>
         </section>
     </div>
 

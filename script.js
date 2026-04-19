@@ -17,3 +17,17 @@ function showSection(sectionId) {
     document.getElementById('link-' + sectionId).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// --- 语言切换核心逻辑 ---
+function switchLang(lang) {
+    const body = document.body;
+    const langDisplay = document.getElementById('lang-display');
+
+    if (lang === 'zh') {
+        body.classList.add('show-zh');
+        langDisplay.innerText = '中文'; // 右上角显示为“简”
+    } else {
+        body.classList.remove('show-zh');
+        langDisplay.innerText = 'EN'; // 右上角显示为“EN”
+    }
+}

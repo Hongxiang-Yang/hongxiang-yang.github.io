@@ -106,7 +106,16 @@ nav {
 .lang-switcher {
     position: relative;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 15px;
+    /* ✨ 隐形的桥：把感应区域往下延伸，覆盖缝隙 */
+    margin-bottom: -15px;
+    /* 抵消 padding 带来的排版变化 */
 }
 
 .lang-dropdown {
@@ -121,7 +130,20 @@ nav {
     flex-direction: column;
     gap: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
+    margin-top: 0;
+    /* ✨ 删掉 margin，缝隙彻底消失 */
+}
+
+.lang-item {
+    font-size: 14px;
+    color: var(--text-main);
+    transition: 0.2s;
+    white-space: nowrap;
+    /* 防止文字换行 */
+}
+
+.lang-item:hover {
+    color: var(--accent);
 }
 
 .lang-switcher:hover .lang-dropdown {
@@ -322,6 +344,98 @@ nav a.active {
     font-weight: bold;
 }
 
+/* --- 🌟 Education 页面：时光轴样式 --- */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    /* 给左侧的线留出空间 */
+    margin-top: 10px;
+}
+
+/* 画出左侧的那条竖线 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: #e5e7eb;
+    /* 浅灰色竖线 */
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+/* 最后一个条目不需要底边距 */
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 画出轴上的节点（圆点） */
+.timeline-dot {
+    position: absolute;
+    left: -31px;
+    /* 移到竖线正中央 */
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border: 3px solid var(--accent);
+    /* 用你的专属蓝色做外圈 */
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(63, 131, 248, 0.1);
+    /* 加一点淡淡的蓝色光晕，非常有科技感 */
+}
+
+/* 年份日期样式 */
+.timeline-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    background: rgba(63, 131, 248, 0.08);
+    /* 极浅的蓝色底色 */
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* 学位标题样式 */
+.timeline-degree {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #374151;
+    /* 统一的深灰色，不刺眼 */
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* 学校名称样式 */
+.timeline-uni {
+    font-size: 1rem;
+    color: var(--text-sub);
+    /* 浅灰色副文本 */
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* 手机适配 */
 @media (max-width: 900px) {
     nav {
@@ -375,4 +489,26 @@ section.active {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* --- 🌐 语言切换核心控制逻辑 --- */
+/* 默认状态下（英文版），隐藏所有带有 lang="zh" 的元素 */
+[lang="zh"] {
+    display: none !important;
+}
+
+/* 当 body 被加上 .show-zh 类名时（中文版），隐藏英文，显示中文 */
+body.show-zh [lang="en"] {
+    display: none !important;
+}
+
+body.show-zh [lang="zh"] {
+    display: block !important;
+}
+
+/* 针对在同行内显示的小文字（如 span, a），防止强行变成 block 导致换行 */
+body.show-zh span[lang="zh"],
+body.show-zh a[lang="zh"],
+body.show-zh b[lang="zh"] {
+    display: inline-block !important;
 }
