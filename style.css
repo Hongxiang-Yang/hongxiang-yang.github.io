@@ -93,14 +93,27 @@ b {
 /* 导航栏 */
 nav {
     position: fixed;
-    top: 40px;
+    top: 0;
     left: 0;
     width: 100%;
-    padding: 0 50px;
+    padding: 25px 50px;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    transition: background 0.3s ease;
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent);
 }
 
 .lang-switcher {
@@ -173,7 +186,7 @@ nav a.active {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 120px 40px 60px;
+    padding: 100px 40px 60px; /* 调整顶部 padding 以适配新的 fixed nav */
     opacity: 0;
     transition: var(--transition);
 }
@@ -193,7 +206,15 @@ nav a.active {
 .profile-side {
     text-align: left;
     position: sticky;
-    top: 120px;
+    top: 100px; /* 适配新的导航栏位置 */
+    max-height: calc(100vh - 120px); /* 防止小屏幕显示不全 */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* 隐藏滚动条但保留功能 */
+.profile-side::-webkit-scrollbar {
+    width: 0px;
 }
 
 .profile-name {
@@ -347,9 +368,8 @@ nav a.active {
 /* --- 🌟 Education 页面：时光轴样式 --- */
 .timeline {
     position: relative;
-    padding-left: 30px;
-    /* 给左侧的线留出空间 */
-    margin-top: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
 }
 
 /* 画出左侧的那条竖线 */
@@ -361,67 +381,79 @@ nav a.active {
     bottom: 5px;
     width: 2px;
     background: #e5e7eb;
-    /* 浅灰色竖线 */
     border-radius: 2px;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
 }
 
-/* 最后一个条目不需要底边距 */
 .timeline-item:last-child {
     margin-bottom: 0;
 }
 
-/* 画出轴上的节点（圆点） */
 .timeline-dot {
     position: absolute;
-    left: -31px;
-    /* 移到竖线正中央 */
-    top: 6px;
+    left: -21px;
+    top: 15px;
     width: 12px;
     height: 12px;
     background: #ffffff;
     border: 3px solid var(--accent);
-    /* 用你的专属蓝色做外圈 */
     border-radius: 50%;
     z-index: 2;
     box-shadow: 0 0 0 4px rgba(63, 131, 248, 0.1);
-    /* 加一点淡淡的蓝色光晕，非常有科技感 */
+}
+
+.timeline-school-logo {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+}
+
+.timeline-school-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.timeline-content {
+    flex-grow: 1;
 }
 
 /* 年份日期样式 */
 .timeline-date {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 8px;
     background: rgba(63, 131, 248, 0.08);
-    /* 极浅的蓝色底色 */
-    padding: 4px 10px;
+    padding: 3px 10px;
     border-radius: 20px;
 }
 
 /* 学位标题样式 */
 .timeline-degree {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #374151;
-    /* 统一的深灰色，不刺眼 */
-    margin-bottom: 5px;
+    color: #1f2937; /* 深黑色 */
+    margin-bottom: 4px;
     line-height: 1.4;
 }
 
 /* 学校名称样式 */
 .timeline-uni {
     font-size: 1rem;
-    color: var(--text-sub);
-    /* 浅灰色副文本 */
+    color: #6b7280; /* 这里的灰度要比标题浅一些，但确保清晰 */
     font-weight: 600;
 }
 
@@ -439,34 +471,59 @@ nav a.active {
 /* 手机适配 */
 @media (max-width: 900px) {
     nav {
-        position: relative;
+        position: fixed; /* 保持移动端也是 fixed */
         top: 0;
-        padding: 20px;
+        padding: 15px 20px;
         flex-direction: row;
-        justify-content: center;
-        gap: 20px;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
     }
 
     .home-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .profile-side {
         text-align: center;
         position: static;
-        margin-bottom: 40px;
+        margin-bottom: 20px; /* 减小间距 */
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .contact-info {
+        margin-bottom: 10px; /* 减小底部间距以解决与正文间距过大的问题 */
     }
 
     .social-icons {
         justify-content: center;
+        margin-bottom: 15px;
     }
 
     .container {
-        padding-top: 20px;
+        padding: 80px 20px 40px; /* 适配移动端 fixed nav */
     }
 
     .content-card {
-        padding: 30px;
+        padding: 25px;
+    }
+
+    .timeline-item {
+        gap: 15px;
+    }
+
+    .timeline-school-logo {
+        width: 40px;
+        height: 40px;
     }
 }
 
