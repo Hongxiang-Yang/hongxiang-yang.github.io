@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Dancing+Script:wght@600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&family=Dancing+Script:wght@600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -199,6 +199,31 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div class="content-card">
+                        <span class="news-title" lang="en">Recent Activities</span>
+                        <span class="news-title" lang="zh">近期活动</span>
+                        <div class="photo-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin-top: 15px;">
+                            <div class="activity-photo">
+                                <div style="aspect-ratio: 4/3; background: #f3f4f6; border-radius: 12px; overflow: hidden; margin-bottom: 8px;">
+                                    <img src="images/activity1.jpg" alt="CHI '26 Barcelona Student Volunteer" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                </div>
+                                <div style="font-size: 0.85rem; color: var(--text-sub); text-align: center; line-height: 1.4; font-weight: 500;">CHI '26 Barcelona<br>Student Volunteer</div>
+                            </div>
+                            <div class="activity-photo">
+                                <div style="aspect-ratio: 4/3; background: #f3f4f6; border-radius: 12px; overflow: hidden; margin-bottom: 8px;">
+                                    <img src="images/activity2.jpg" alt="My Badge!" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                </div>
+                                <div style="font-size: 0.85rem; color: var(--text-sub); text-align: center; line-height: 1.4; font-weight: 500;">My Badge!</div>
+                            </div>
+                            <div class="activity-photo">
+                                <div style="aspect-ratio: 4/3; background: #f3f4f6; border-radius: 12px; overflow: hidden; margin-bottom: 8px;">
+                                    <img src="images/activity3.jpg" alt="Me and my lovely supervisor!" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                </div>
+                                <div style="font-size: 0.85rem; color: var(--text-sub); text-align: center; line-height: 1.4; font-weight: 500;">Me and my lovely<br>supervisor!</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -283,17 +308,27 @@
         </section>
 
         <section id="project">
-            <h2 lang="en">Project Gallery</h2>
-            <h2 lang="zh">项目画廊</h2>
-            <p lang="en">Content coming soon...</p>
-            <p lang="zh">内容建设中...</p>
+            <div class="card-stack">
+                <div class="content-card" style="text-align: center; padding: 80px 45px;">
+                    <i class="fas fa-laptop-code" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px; opacity: 0.8;"></i>
+                    <h2 lang="en" class="text-gradient">Project Gallery</h2>
+                    <h2 lang="zh" class="text-gradient">项目画廊</h2>
+                    <p lang="en" style="color: var(--text-sub);">Exciting projects are brewing. Check back soon!</p>
+                    <p lang="zh" style="color: var(--text-sub);">激动人心的项目正在筹备中，敬请期待！</p>
+                </div>
+            </div>
         </section>
 
         <section id="cv">
-            <h2 lang="en">Curriculum Vitae</h2>
-            <h2 lang="zh">简历</h2>
-            <p lang="en">Content coming soon...</p>
-            <p lang="zh">内容建设中...</p>
+            <div class="card-stack">
+                <div class="content-card" style="text-align: center; padding: 80px 45px;">
+                    <i class="fas fa-file-alt" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px; opacity: 0.8;"></i>
+                    <h2 lang="en" class="text-gradient">Curriculum Vitae</h2>
+                    <h2 lang="zh" class="text-gradient">简历</h2>
+                    <p lang="en" style="color: var(--text-sub);">My full resume will be available here shortly.</p>
+                    <p lang="zh" style="color: var(--text-sub);">完整的个人简历将很快在这里上线。</p>
+                </div>
+            </div>
         </section>
     </div>
 

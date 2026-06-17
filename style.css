@@ -18,14 +18,18 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.7;
     overflow-x: hidden;
     background-color: #ffffff;
-    background-image: radial-gradient(rgba(63, 131, 248, 0.5) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgba(63, 131, 248, 0.35) 1.5px, transparent 1.5px);
     background-size: 100px 100px;
     animation: speed-panning 40s linear infinite;
     color: var(--text-main);
+}
+
+h1, h2, h3, h4, h5, h6, .news-title, .timeline-degree, .profile-name {
+    font-family: 'Outfit', sans-serif;
 }
 
 @keyframes speed-panning {
@@ -43,6 +47,13 @@ strong,
 b {
     color: #374151;
     font-weight: 600;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent), #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* 开场动画 */
@@ -174,12 +185,29 @@ nav a {
     color: var(--text-main);
     font-size: 15px;
     transition: 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
     color: var(--accent);
     font-weight: 600;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
 }
 
 /* 容器布局 */
@@ -210,6 +238,7 @@ nav a.active {
     max-height: calc(100vh - 120px); /* 防止小屏幕显示不全 */
     overflow-y: auto;
     padding-right: 10px;
+    padding-top: 45px;
 }
 
 /* 隐藏滚动条但保留功能 */
@@ -285,6 +314,12 @@ nav a.active {
     border-radius: 20px;
     border: 1px solid #f2f2f2;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 .content-card h2 {
@@ -498,6 +533,7 @@ nav a.active {
         margin-bottom: 20px; /* 减小间距 */
         max-height: none;
         overflow-y: visible;
+        padding-top: 0;
     }
 
     .contact-info {
