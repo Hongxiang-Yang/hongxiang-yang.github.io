@@ -136,8 +136,8 @@ nav::after {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding-bottom: 25px; /* Creates an invisible, hoverable gap below the text */
-    margin-bottom: -25px; /* Cancels out the layout shift */
+    padding-bottom: 10px;
+    margin-bottom: -10px;
 }
 
 .lang-dropdown {
@@ -152,7 +152,18 @@ nav::after {
     flex-direction: column;
     gap: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* margin-top is removed because padding-bottom of the parent already creates the visual gap */
+    margin-top: 15px;
+}
+
+/* ✨ 超宽隐形桥：覆盖所有斜向滑动的轨迹，防止判定丢失 */
+.lang-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -40px;
+    right: -40px;
+    height: 30px;
+    background: transparent;
 }
 
 .lang-item {
