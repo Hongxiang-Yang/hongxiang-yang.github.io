@@ -136,10 +136,8 @@ nav::after {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding-bottom: 15px;
-    /* ✨ 隐形的桥：把感应区域往下延伸，覆盖缝隙 */
-    margin-bottom: -15px;
-    /* 抵消 padding 带来的排版变化 */
+    padding-bottom: 25px; /* Creates an invisible, hoverable gap below the text */
+    margin-bottom: -25px; /* Cancels out the layout shift */
 }
 
 .lang-dropdown {
@@ -154,19 +152,7 @@ nav::after {
     flex-direction: column;
     gap: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 10px; /* Provide a visual gap */
-}
-
-/* ✨ 隐形的桥：用伪元素填补按钮和下拉菜单之间的所有缝隙 */
-.lang-dropdown::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    height: 30px;
-    background: transparent;
-    z-index: -1;
+    /* margin-top is removed because padding-bottom of the parent already creates the visual gap */
 }
 
 .lang-item {
