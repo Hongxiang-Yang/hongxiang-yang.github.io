@@ -145,7 +145,7 @@ nav::after {
 .lang-dropdown {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -10px; /* Slightly offset to left to catch diagonal movement */
     background: white;
     border: 1px solid #eee;
     border-radius: 8px;
@@ -154,8 +154,19 @@ nav::after {
     flex-direction: column;
     gap: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 0;
-    /* ✨ 删掉 margin，缝隙彻底消失 */
+    margin-top: 10px; /* Provide a visual gap */
+}
+
+/* ✨ 隐形的桥：用伪元素填补按钮和下拉菜单之间的所有缝隙 */
+.lang-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    height: 30px;
+    background: transparent;
+    z-index: -1;
 }
 
 .lang-item {
